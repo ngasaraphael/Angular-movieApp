@@ -1,0 +1,29 @@
+.main-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.main-page .mainpageModal {
+  width: 80%;
+  max-width: 700px;
+  text-align: center;
+  border: 1px solid rgb(231, 231, 255);
+  margin-top: -100px;
+  padding: 40px 0;
+  border-radius: 8px;
+}
+.main-page h1 {
+  margin-bottom: 100px;
+}
+
+.main-page .signupBnt {
+  margin-bottom: 30px;
+  width: 100px;
+}
+
+.main-page .loginBnt {
+  width: 100px;
+}
