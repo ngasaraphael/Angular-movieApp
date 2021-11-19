@@ -1,0 +1,58 @@
+<mat-card>
+  <button mat-icon-button [mat-dialog-close]="true">
+    <mat-icon class="close">close</mat-icon>
+  </button>
+  <br />
+  <br />
+  <mat-card-header>
+    <mat-card-title>Update User Info</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <form>
+      <mat-form-field>
+        <input
+          matInput
+          [(ngModel)]="userData.username"
+          placeholder="username"
+          type="text"
+          name="username"
+          required
+        />
+      </mat-form-field>
+      <mat-form-field>
+        <input
+          matInput
+          [(ngModel)]="userData.password"
+          type="password"
+          placeholder="password"
+          name="password"
+          required
+        />
+      </mat-form-field>
+      <mat-form-field>
+        <input
+          matInput
+          [(ngModel)]="userData.email"
+          type="email"
+          placeholder="email"
+          name="email"
+          required
+        />
+      </mat-form-field>
+      <mat-form-field>
+        <input
+          matInput
+          [(ngModel)]="userData.birthday"
+          type="date"
+          placeholder="birthday"
+          name="birthday"
+        />
+      </mat-form-field>
+    </form>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-raised-button (click)="updateUser()" color="primary">
+      Update Profile
+    </button>
+  </mat-card-actions>
+</mat-card>

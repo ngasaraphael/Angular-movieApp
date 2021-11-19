@@ -1,0 +1,45 @@
+.nav {
+  position: fixed;
+  border-bottom: 1px solid rgb(194, 194, 194);
+  width: 100%;
+  z-index: 99;
+  background-color: white;
+}
+
+.nav .profileBtn {
+  margin: 16px 0;
+}
+
+.movieContainer {
+  text-align: center;
+  padding-top: 120px;
+}
+
+.movieCards {
+  display: inline-grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 50px;
+}
+
+.movieImg {
+  width: 290px;
+}
+
+.favBtn {
+  border: none;
+  background-color: transparent;
+}
+
+@media (max-width: 1100px) {
+  .movieCards {
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+  }
+}
+
+@media (max-width: 800px) {
+  .movieCards {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}

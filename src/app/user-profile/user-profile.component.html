@@ -1,0 +1,33 @@
+<div class="userProfile">
+  <mat-card class="userProfileCard">
+    <mat-card-header>
+      <mat-card-title>
+        <h2>{{ user.username }}</h2></mat-card-title
+      >
+    </mat-card-header>
+    <mat-card-content>
+      <p><b>Username</b>: {{ user.username }}</p>
+      <br />
+      <p><b>Password: ********</b></p>
+      <br />
+      <p><b>Email</b>: {{ user.email }}</p>
+      <br />
+      <p><b>Birth Date</b>: {{ user.birthday | date: "MM/dd/yyyy":"UTC" }}</p>
+    </mat-card-content>
+    <br />
+    <mat-card-actions>
+      <button mat-raised-button (click)="login()" color="primary">Back</button>
+      <button
+        mat-raised-button
+        color="primary"
+        (click)="openEditProfileDialog()"
+      >
+        Edit
+      </button>
+
+      <button mat-raised-button (click)="deleteUser()" color="accent">
+        Delete
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</div>

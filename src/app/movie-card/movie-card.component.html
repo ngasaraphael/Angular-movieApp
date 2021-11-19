@@ -1,0 +1,63 @@
+<div class="nav">
+  <button mat-button (click)="profile()" color="primary" class="profileBtn">
+    Profile
+  </button>
+  <button mat-button (click)="favorites()" color="primary" class="profileBtn">
+    Favorite
+  </button>
+  <!-- <a mat-list-item href="favorites">Favorites</a> -->
+</div>
+<div class="movieContainer">
+  <div class="movieCards">
+    <mat-card *ngFor="let movie of movies" class="movieCard">
+      <mat-card-header>
+        <mat-card-title>{{ movie.Title }}</mat-card-title>
+        <mat-card-subtitle
+          >Directed by: {{ movie.Director.Name }}</mat-card-subtitle
+        >
+      </mat-card-header>
+      <img
+        src="{{ movie.ImagePath }}"
+        alt="{{ movie.Title }}"
+        class="movieImg"
+      />
+      <mat-card-actions>
+        <button
+          mat-button
+          (click)="
+            openMovieGenreDialog(movie.Genre.Name, movie.Genre.Description)
+          "
+          color="primary"
+        >
+          Genre
+        </button>
+        <button
+          mat-button
+          color="primary"
+          (click)="
+            openMovieDirectorDialog(movie.Director.Name, movie.Director.Bio)
+          "
+        >
+          Director
+        </button>
+        <button
+          mat-button
+          color="primary"
+          (click)="openMovieDirectorDialog(movie.Title, movie.Description)"
+        >
+          Synopsis
+        </button>
+
+        <!-- <mat-icon>favorite_border</mat-icon> -->
+        <button mat-icon-button color="warn" (click)="toggleFavs(movie)">
+          <mat-icon *ngIf="isFav(movie._id)">favorite</mat-icon>
+          <mat-icon *ngIf="!isFav(movie._id)">favorite_border</mat-icon>
+        </button>
+        <!--  favorite route -->
+        <app-user-profile
+          *ngIf="router.url === '/favorites'"
+        ></app-user-profile>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>
