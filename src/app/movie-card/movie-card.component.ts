@@ -36,15 +36,22 @@ export class MovieCardComponent {
       return this.movies;
     });
   }
-
-  //open movieGenreModal
+  /**
+   * Opens the Genre dialog
+   * @param title
+   * @param description
+   */
   openMovieGenreDialog(name: string, description: string): void {
     this.dialog.open(MovieGenreComponent, {
       data: { name, description },
     });
   }
 
-  //open movieDirectorModal
+  /**
+   * Opens the Director dialog
+   * @param name
+   * @param Bio
+   */
   openMovieDirectorDialog(Name: string, Bio: string): void {
     this.dialog.open(MovieDirectorComponent, {
       data: { Name, Bio },
@@ -64,7 +71,7 @@ export class MovieCardComponent {
   //Get favs
   getUserFavs(): any {
     this.fetchApiData
-      .getFavoriteMovies(this.user.Username)
+      .getFavoriteMovies(this.user.username)
       .subscribe((res: any) => {
         this.favMovies = res.Favorites;
         return this.favMovies;
